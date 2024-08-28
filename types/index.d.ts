@@ -159,6 +159,22 @@ declare interface MobileNavProps {
   user: User;
 }
 
+declare interface TotalEmployeeBoxProbs{
+  icon: string;
+  title: string;
+  totalEmployee: number;
+  employeedifference: number;
+  lastUpdated: string;
+}
+
+declare interface HomeCard{
+  title: string;
+  count: number;
+  icon: any;
+  updateDate: string;
+  percentageChange: number;
+}
+
 declare interface PageHeaderProps {
   topTitle: string;
   bottomTitle: string;
