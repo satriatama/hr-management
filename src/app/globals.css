@@ -43,6 +43,24 @@
   background: #7878a3;
 }
 
+@layer base{
+  :root {
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+ 
+  .dark {
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
 @layer utilities {
   .input-class {
     @apply text-16 placeholder:text-16 rounded-lg border border-gray-300 text-gray-900 placeholder:text-gray-500;
@@ -128,7 +146,7 @@
     @apply flex w-full flex-row gap-1;
   }
   .home-content-bottom{
-    @apply flex flex-col justify-between border border-yellow-600;
+    @apply flex flex-col gap-1 border border-gray-300 rounded-lg mt-1 ms-3 me-12;
   }
   .home-content-left{
     @apply flex gap-1  ;
@@ -445,4 +463,76 @@
   /* .sidebar-label {
     @apply text-16 font-semibold text-black-2 max-xl:hidden;
   } */
+
+}
+
+@layer components{
+  .table-responsive {
+    @apply overflow-auto;
+  }
+  table {
+      @apply w-full !border-collapse;
+  }
+  table thead tr,
+  table tfoot tr {
+      @apply border-b-0 !bg-[#f6f8fa]  dark:!bg-[#1a2941];
+  }
+   
+  table thead tr th,
+  table tfoot tr th,
+  table tbody tr td {
+      @apply py-3 px-4 ltr:text-left rtl:text-right;
+  }
+  
+  table thead tr th,
+  table tfoot tr th {
+      @apply font-semibold;
+  }
+  
+  table tbody tr {
+      @apply border-b border-gray-200 dark:border-[#191e3a];
+  }
+  
+  table.table-hover tbody tr {
+      @apply hover:!bg-white-light/20 dark:hover:!bg-[#1a2941]/40;
+  }
+  
+  table.table-striped tbody tr:nth-child(odd) {
+      @apply !bg-white-light/20 dark:!bg-[#1a2941]/40;
+  }
+  table.dataTable-table tbody tr th,
+  table.dataTable-table tbody tr td {
+      @apply border-b border-white-light/40 py-3 px-4 ltr:text-left rtl:text-right dark:border-[#191e3a];
+  }
+  table.dataTable-table tbody tr:last-child td {
+      @apply border-b-0;
+  }
+
+
+  /* Badge */
+  .badge {
+    @apply relative my-1 rounded border border-transparent px-2 py-0.5 text-xs font-semibold text-white;
+  }
+  .badge-outline-primary {
+      @apply border-primary text-primary hover:bg-primary-light dark:hover:bg-primary dark:hover:text-white-light;
+  }
+  .badge-outline-secondary {
+      @apply border-secondary text-secondary hover:bg-secondary-light dark:hover:bg-secondary dark:hover:text-white-light;
+  }
+  .badge-outline-success {
+      @apply border-success text-success hover:bg-success-light dark:hover:bg-success dark:hover:text-white-light;
+  }
+  .badge-outline-danger {
+      @apply border-danger text-danger hover:bg-danger-light dark:hover:bg-danger dark:hover:text-white-light;
+  }
+  .badge-outline-warning {
+      @apply border-warning text-warning hover:bg-warning-light dark:hover:bg-warning dark:hover:text-white-light;
+  }
+  .badge-outline-info {
+      @apply border-info text-info hover:bg-info-light dark:hover:bg-info dark:hover:text-white-light;
+  }
+  .badge-outline-dark {
+      @apply border-dark text-dark hover:bg-dark-light dark:hover:bg-dark dark:hover:text-white-light;
+  }
+
 }

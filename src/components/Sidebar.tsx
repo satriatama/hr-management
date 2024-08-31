@@ -12,11 +12,11 @@ const Sidebar = () => {
             </div>
         </div>
         <div className='sidebar-content ms-3 mt-3'>
-            <div className='sidebar-logo '>
+            <div className='sidebar-logo  sidebar-active '>
                 <img className='ps-2' src='https://via.placeholder.com/30' alt='logo' />
                 <span className='sidebar-label'>Dashboard</span>
             </div>
-            <div className='sidebar-logo sidebar-active'>
+            <div className='sidebar-logo'>
                 <img className='ps-2' src='https://via.placeholder.com/30' alt='logo' />
                 <span className='sidebar-label'>All Employee</span>
             </div>
